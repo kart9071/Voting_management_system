@@ -30,7 +30,7 @@
                 $password = $row['PASSWORD'];
                 $username = $row['USERNAME'];
                 if ($passwd == $password) {
-                    echo "Your password is correct";
+                  echo "Your password is correct";
                 }
             }
         }
