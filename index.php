@@ -1,30 +1,31 @@
-<?php 
+<?php
 include_once "mysql.php";
-if(isset($_POST['submit'])){
-    $name=$_POST['Registration_name'];
-    $ID=$_POST['Registration_id'];
-    $phono=$_POST["Registration_phono"];
-    $did=$_POST['Registration_did'];
-    $dname=$_POST['Registration_dname'];
-    
-    $query1="INSERT INTO USERS(name,student_id,phono,department_id,department_name) VALUES('$name','$ID','$phono','$did','$dname')";
-    if(mysqli_query($conn,$query1)){
-            ?>
-            <script>
-               window.alert("The data submitted successfully") 
-            </script>
-            <?php
-    }
+if (isset($_POST['submit'])) {
+	$name = $_POST['Registration_name'];
+	$ID = $_POST['Registration_id'];
+	$phono = $_POST["Registration_phono"];
+	$did = $_POST['Registration_did'];
+	$dname = $_POST['Registration_dname'];
+
+	$query1 = "INSERT INTO USERS(name,student_id,phono,department_id,department_name) VALUES('$name','$ID','$phono','$did','$dname')";
+	if (mysqli_query($conn, $query1)) {
+?>
+		<script>
+			window.alert("The data submitted successfully")
+		</script>
+<?php
+	}
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-      
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
 	<style>
 		body {
 			margin: 0;
@@ -53,12 +54,24 @@ if(isset($_POST['submit'])){
 			display: flex;
 			flex-direction: column;
 		}
+		.logo {
+            width: 80px;
+            margin: auto;
+        }
 
-		.image h2 {
-			color:royalblue;
+        .logo img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            /* box-shadow: 0px 0px 3px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaa7, -8px -8px 15px #fff; */
+        }
+
+		/* .image h2 {
+			color: royalblue;
 			font-size: 20px;
 			margin-bottom: 50px;
-		}
+		} */
 
 		.username input,
 		.pass input {
@@ -70,7 +83,8 @@ if(isset($_POST['submit'])){
 			text-align: center;
 			outline: none;
 		}
-		.student_id input{
+
+		.student_id input {
 			font-family: sans-serif;
 			margin-bottom: 20px;
 			height: 30px;
@@ -97,59 +111,64 @@ if(isset($_POST['submit'])){
 		}
 	</style>
 </head>
+
 <body>
-<form method="post" action="login.php">
-<div class="main">
-		<div class="image">
-			<h2>STUDENT COUNCIL</h2>
-		</div>
-		<div class="student_id">
-                <input type="number" name="student_id"  placeholder="Enter student id">
-            </div>
-		<div class="username">
-			<input type="text" name="username" placeholder="Create your username">
-		</div>
-		<div class="pass">
-			<input id="pass" type="password" name="pass" placeholder="Enter Password" required"">
-			<input id="confirm_pass" type="password" name="confirm_pass" placeholder="Confirm Password" required onkeyup="validate_password()">
-		</div>
-		<span id="wrong_pass_alert"></span>
-		<div class="buttons">
-			<button id="create" type="submit" class="submit_btn" name="submit" onclick="wrong_pass_alert()" action=>
-				Submit
-			</button>
-            <script>
-		function validate_password() {
+	<form method="post" action="login.php">
+		<div class="main">
+			<!-- <div class="image">
+				<h2>STUDENT COUNCIL</h2>
+			</div> -->
+			<div class="logo">
+            <img src="council.jpeg" alt="">
+        </div>
 
-			var pass = document.getElementById('pass').value;
-			var confirm_pass = document.getElementById('confirm_pass').value;
-			if (pass != confirm_pass) {
-				document.getElementById('wrong_pass_alert').style.color = 'red';
-				document.getElementById('wrong_pass_alert').innerHTML
-				= '☒ Use same password';
-				document.getElementById('create').disabled = true;
-				document.getElementById('create').style.opacity = (0.4);
-			} else {
-				document.getElementById('wrong_pass_alert').style.color = 'green';
-				document.getElementById('wrong_pass_alert').innerHTML =
-					'🗹 Password Matched';
-				document.getElementById('create').disabled = false;
-				document.getElementById('create').style.opacity = (1);
-			}
-		}
+			<div class="student_id">
+				<input type="number" name="student_id" placeholder="Enter student id">
+			</div>
+			<div class="username">
+				<input type="text" name="username" placeholder="Create your username">
+			</div>
+			<div class="pass">
+				<input id="pass" type="password" name="pass" placeholder="Enter Password" required"">
+				<input id="confirm_pass" type="password" name="confirm_pass" placeholder="Confirm Password" required onkeyup="validate_password()">
+			</div>
+			<span id="wrong_pass_alert"></span>
+			<div class="buttons">
+				<button id="create" type="submit" class="submit_btn" name="submit" onclick="wrong_pass_alert()" action=>
+					Submit
+				</button>
+				<script>
+					function validate_password() {
 
-		function wrong_pass_alert() {
-			if (document.getElementById('pass').value != "" &&
-				document.getElementById('confirm_pass').value != "") {
-				alert("Your response is submitted");
-			} else {
-				alert("Please fill all the fields");
-			}
-		}
-	</script>
+						var pass = document.getElementById('pass').value;
+						var confirm_pass = document.getElementById('confirm_pass').value;
+						if (pass != confirm_pass) {
+							document.getElementById('wrong_pass_alert').style.color = 'red';
+							document.getElementById('wrong_pass_alert').innerHTML = '☒ Use same password';
+							document.getElementById('create').disabled = true;
+							document.getElementById('create').style.opacity = (0.4);
+						} else {
+							document.getElementById('wrong_pass_alert').style.color = 'green';
+							document.getElementById('wrong_pass_alert').innerHTML =
+								'🗹 Password Matched';
+							document.getElementById('create').disabled = false;
+							document.getElementById('create').style.opacity = (1);
+						}
+					}
+
+					function wrong_pass_alert() {
+						if (document.getElementById('pass').value != "" &&
+							document.getElementById('confirm_pass').value != "") {
+							alert("Your response is submitted");
+						} else {
+							alert("Please fill all the fields");
+						}
+					}
+				</script>
+			</div>
 		</div>
-	</div>
-</form>
-	
+	</form>
+
 </body>
+
 </html>
