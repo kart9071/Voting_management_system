@@ -1,3 +1,20 @@
+<?php
+    include_once 'mysql.php';
+    if (isset($_POST['submit'])) {
+        $username = $_POST['username'];
+        $password = $_POST['confirm_pass'];
+        $student_id = $_POST['student_id'];
+        $query1 = "INSERT INTO VOTERS VALUES('$student_id','$username','$password')";
+        if (mysqli_query($conn, $query1)) {
+    ?>
+            <script>
+                window.alert("The data submitted successfully");
+                window.location.assign("http://localhost/Voting_management_system/Users_interface/Login.php");
+            </script>
+    <?php
+        }
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,6 +105,11 @@
         .wrapper .btn:hover {
             background-color: #039BE5;
         }
+        .wrapper a{
+            text-decoration: none;
+            font-size: 0.8rem;
+            color: #03A9F4;
+        }
 
         
 
@@ -97,14 +119,17 @@
                 padding: 40px 15px 15px 15px;
             }
         }
+        .Register_1{
+            padding-top: 50px;
+        }
 	</style>
 </head>
 
 <body>
-	<form class="p-3 mt-3" method="post" action="login1_index.php">
+	<form class="p-3 mt-3" method="post" action="loginpost.php">
 	<div class="wrapper">
 	<div class="logo">
-            <img src="council.jpeg" alt="">
+            <img src="../images/council.jpeg" alt="">
         </div>
 	<div class="text-center mt-4 name">
             VOTING MANAGEMENT SYSTEM
@@ -118,6 +143,10 @@
 			<input type="password" name="login_password" id="login_password" placeholder="Enter your password">
 		</div>
 		<button class="btn mt-3" type="submit" name="submit">Login</button>
+      <div class="Register_1">
+        not have a account?
+        <a href="http://localhost/Voting_management_system/Users_interface/Register1.php"> Register</a>
+      </div>
 	</div>
 	</form>
 

@@ -110,18 +110,21 @@
                 padding: 40px 15px 15px 15px;
             }
         }
+        .login_1{
+            padding-top: 20px;
+        }
     </style>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="logo">
-            <img src="council.jpeg" alt="">
+            <img src="../images/council.jpeg" alt="">
         </div>
         <div class="text-center mt-4 name">
             VOTING MANAGEMENT SYSTEM
         </div>
-        <form class="p-3 mt-3" method="post" action="index.php">
+        <form class="p-3 mt-3" method="post" action="Register2.php">
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
                 <input type="text" name="Registration_name" id="Registration_name" placeholder="Enter your name">
@@ -143,6 +146,10 @@
                 <input type="text" name="Registration_dname" id="Registration_dname" placeholder="Enter student Department name">
             </div>
             <button class="btn mt-3" type="submit" name="submit">Register</button>
+            <div class="login_1">
+                already have a account?
+                <a href="http://localhost/Voting_management_system/Login.php">Login</a>
+            </div>
         </form>
     </div>
 </body>

@@ -119,7 +119,7 @@ if (isset($_POST['submit'])) {
 				<h2>STUDENT COUNCIL</h2>
 			</div> -->
 			<div class="logo">
-            <img src="council.jpeg" alt="">
+            <img src="../images/council.jpeg" alt="">
         </div>
 
 			<div class="student_id">

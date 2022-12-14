@@ -19,8 +19,8 @@
         if ($check2 == 0) {
     ?>
             <script>
-                window.alert("The data is incorrect");
-                window.location.assign("http://localhost/Voting_management_system/Login1.php");
+                window.alert("The username is not found!!try with the correct username...");
+                window.location.assign("http://localhost/Voting_management_system/Users_interface/Login.php");
             </script>
 
     <?php

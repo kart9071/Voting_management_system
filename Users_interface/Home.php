@@ -36,12 +36,12 @@
 
 <body>
     <div class="button_g">
-        <a href="http://localhost/Voting_management_system/Login1.php">
+        <a href="http://localhost/Voting_management_system/Users_interface/Login.php">
             <button class="button">login</button>
         </a>
     </div>
     <div class="button_k">
-        <a href="http://localhost/Voting_management_system/Register.php">
+        <a href="http://localhost/Voting_management_system/Users_interface/Register1.php">
             <button class="button1">Register</button>
         </a>
     </div>
