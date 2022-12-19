@@ -16,6 +16,7 @@ if (mysqli_query($conn, $query1)) {
 ?>
     <script>
         window.alert("inserted successfully")
+        window.location.assign("Entry.php")
     </script>
 <?php
 } else {
