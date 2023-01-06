@@ -10,11 +10,11 @@
 
 <body>
     <?php
-    include_once "mysql.php";
+    include_once 'mysql.php';
     if (isset($_POST['submit'])) {
         $name = $_POST['login_username'];
         $passwd = $_POST['login_password'];
-        $query1 = $conn->query("SELECT USERNAME,PASSWORD FROM VOTERS WHERE USERNAME='$name' ");
+        $query1 = $conn->query("SELECT USERNAME,PASSWORD FROM VOTERS WHERE USERNAME='$name'");
         $check2 = mysqli_num_rows($query1);
         if ($check2 == 0) {
     ?>
@@ -31,7 +31,7 @@
                 $username = $row['USERNAME'];
                 if ($passwd == $password) {
                 //   echo "Your password is correct";
-                    header("Location:http://localhost/Voting_management_system/Users_interface/index.php");
+                    header("Location:http://localhost/Voting_management_system/Users_interface/index1.php");
                 }
             }
         }
