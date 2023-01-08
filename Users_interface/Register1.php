@@ -47,7 +47,7 @@
             <button class="btn mt-3" type="submit" name="submit">Register</button>
             <div class="login_1">
                 already have a account?
-                <a href="http://localhost/Voting_management_system/Login.php">Login</a>
+                <a href="http://localhost/Voting_management_system/Users_interface/login.php">Login</a>
             </div>
         </form>
     </div>

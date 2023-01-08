@@ -2,7 +2,7 @@
 include_once "mysql.php";
 if (isset($_POST['submit'])) {
 	session_start();
-	$_SESSION['Registration_id']=$_POST['Registration_did'];
+	$_SESSION["department_number"]=$_POST["Registration_did"];
 	$name = $_POST['Registration_name'];
 	$ID = $_POST['Registration_id'];
 	$phono = $_POST["Registration_phono"];
