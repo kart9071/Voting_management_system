@@ -134,9 +134,13 @@
 	<div class="text-center mt-4 name">
             VOTING MANAGEMENT SYSTEM
         </div>
+        <div class="form-field d-flex align-items-center">
+			<span class="far fa-user"></span>
+			<input type="number" name="student_id" id="student_id" placeholder="Enter your student_id">
+		</div>
 		<div class="form-field d-flex align-items-center">
 			<span class="far fa-user"></span>
-			<input type="text" name="login_username" id="login_usename" placeholder="Enter your username">
+			<input type="text" name="login_username" id="login_username" placeholder="Enter your username">
 		</div>
 		<div class="form-field d-flex align-items-center">
 			<span class="far fa-user"></span>

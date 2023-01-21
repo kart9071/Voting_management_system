@@ -1,14 +1,23 @@
 <?php
 include_once "mysql.php";
 if (isset($_POST['submit'])) {
-	session_start();
-	$_SESSION["department_number"]=$_POST["Registration_did"];
+	// session_start();
+	// $_SESSION["department_number"]=$_POST["Registration_did"];
 	$name = $_POST['Registration_name'];
 	$ID = $_POST['Registration_id'];
 	$phono = $_POST["Registration_phono"];
 	$did = $_POST['Registration_did'];
 	$dname = $_POST['Registration_dname'];
-
+	$new_query = mysqli_query($conn, "SELECT * FROM voters WHERE student_id = '".$_POST['Registration_id']."'");
+	if(mysqli_num_rows($new_query)){
+		?>
+		<script>
+			window.location.assign("http://localhost/Voting_management_system/Users_interface/Register1.php")
+			window.alert("the user is already exist.....");
+		</script>
+		<?php	
+	}
+	else{
 	$query1 = "INSERT INTO USERS(name,student_id,phono,department_id,department_name) VALUES('$name','$ID','$phono','$did','$dname')";
 	if (mysqli_query($conn, $query1)) {
 ?>
@@ -18,9 +27,10 @@ if (isset($_POST['submit'])) {
 <?php
 	}
 }
+}
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">3
 
 <head>
 	<meta charset="UTF-8">
