@@ -44,8 +44,7 @@
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 22, 2023 16:35:00").getTime();
-
+var countDownDate = new Date("Jan 22, 2023 19:42:00").getTime();
 // Update the count down every 1 second
 var x = setInterval(function() {
 
@@ -73,7 +72,7 @@ var x = setInterval(function() {
     window.location.assign("http://localhost/Voting_management_system/Users_interface/error.php")
     <?php
     include_once "mysql.php";
-    $sql1=$conn->query("CREATE VIEW VOTE_RESULT AS SELECT CANDIDATES_NAME,PARTY_NAME FROM CANDIDATES WHERE ");
+    $sql1=$conn->query("CREATE VIEW VOTE_RESULT AS SELECT CANDIDATES_NAME,PARTY_NAME,MAX(NO_OF_VOTES) FROM CANDIDATES GROUP BY DEPARTMENT_ID ");
     ?>
   }
 }, 1000);
