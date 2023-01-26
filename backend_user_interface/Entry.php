@@ -135,10 +135,6 @@ body {
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="number" name="position_id" id="position_id" placeholder="Enter the position ID">
-            </div>
-            <div class="form-field d-flex align-items-center">
-                <span class="fas fa-key"></span>
                 <input type="number" name="department_id" id="department_id" placeholder="Enter the Department ID">
             </div>
             <div class="form-field d-flex align-items-center">

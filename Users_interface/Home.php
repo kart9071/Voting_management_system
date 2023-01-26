@@ -37,14 +37,9 @@
 
 
     </style>
-</head>
-
-<body>
-<p id="demo"><script>console.log(distance)</script></p>
-
-<script>
+ <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 22, 2023 19:42:00").getTime();
+var countDownDate = new Date("Jan 23, 2023 1:04:00").getTime();
 // Update the count down every 1 second
 var x = setInterval(function() {
 
@@ -77,6 +72,10 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
+</head>
+
+<body>
+<p id="demo"><script>console.log(distance)</script></p>
     <div class="button_g">
         <a href="http://localhost/Voting_management_system/Users_interface/Login.php">
             <button class="button_g button1">login</button>

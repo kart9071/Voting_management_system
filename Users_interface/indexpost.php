@@ -183,7 +183,7 @@
             }
         }
         if (isset($_POST['submit43'])) {
-            $new_query24 = "UPDATE CANDIDATES SET NO_OF_VOTES=NO_OF_VOTES+1 WHERE candidates_id=15";
+            $new_query43 = "UPDATE CANDIDATES SET NO_OF_VOTES=NO_OF_VOTES+1 WHERE candidates_id=15";
             if (mysqli_query($conn,$new_query43)) {
         ?>
                 <script>
