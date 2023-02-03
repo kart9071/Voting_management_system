@@ -7,112 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
-
-            position: relative;
-            width: 1440px;
-            height: 1024px;
+        body {
+            background-image: url('../images/black.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
         }
 
-        .vote11 {
-            position: absolute;
-            width: 344px;
-            height: 139px;
-            left: 132px;
-            top: 166px;
-        }
-
-        .vote12 {
-            position: absolute;
-            width: 278px;
-            height: 189px;
-            left: 432px;
-            top: 166px;
-        }
-
-        .vote13 {
-            position: absolute;
-            width: 278px;
-            height: 189px;
-            left: 145px;
-            top: 452px;
-        }
-
-        .vote14 {
-
-            position: absolute;
-            width: 278px;
-            height: 189px;
-            left: 475px;
-            top: 461px;
-        }
-
-        .vote11.candidate11 {
-            position: absolute;
-            width: 143px;
-            height: 35px;
-            left: -51px;
-            top: -924px;
-            /* background-color: lightgreen;
-            font-size: 25px;
-            color: darkblue; */
-
-            /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) */
-        }
-
-        .vote12.candidate12 {
-
-            position: absolute;
-            width: 143px;
-            height: 35px;
-            left: 0px;
-            top: -924px;
-            /* background-color: lightgreen;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            font-size: 25px;
-            color: darkblue; */
-            /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
         }
 
-        .vote13.candidate13 {
-
-            position: absolute;
-            width: 143px;
-            height: 35px;
-            left: 0px;
-            top: -904px;
-            /* background-color: lightgreen;
-            text-align: center;
-            font-size: 25px;
-            color: darkblue; */
+        .vote {
+            display: inline-block;
+            width: 200px;
+            margin: 20px;
+            text-align: left;
         }
 
-        .vote14.candidate14 {
-            position: absolute;
-            width: 143px;
-            height: 35px;
-            left: 0px;
-            top: -921px;
-            /* background-color: lightgreen;
-            text-align: center;
-            font-size: 25px;
-            color: darkblue; */
+        .vote img {
+            width: 100%;
+            /* border-radius: 50%; */
+            margin-bottom: 10px;
         }
 
-        .system {
-            box-sizing: border-box;
+        .candidate11 {
+            background-color: lightblue;
+        }
 
-            position: relative;
-            width: 1440px;
-            height: 124px;
+        .candidate12 {
+            background-color: lightgreen;
+        }
 
-            background: #FFFF00;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 2px;
-            font-size: 36px;
-            text-align: center;
-            align-items: center;
-            font-family: 'Times New Roman', Times, serif;
+        .candidate13 {
+            background-color: lightcoral;
+        }
+
+        .candidate14 {
+            background-color: lightyellow;
+        }
+
+        .button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            /* align-items: center; */
         }
     </style>
 </head>
@@ -161,29 +104,35 @@
         }
         // echo $candidate11."<br>".$candidate12."<br>".$candidate13."<br>".$candidate14;
     ?>
-        <div class="vote11">
-            <p>Candidate Name:<?php echo $candidate11?></p>
-            <form action="indexpost.php" method="post">
-                <input type="submit" name="submit11" class="vote11 candidate11" value="vote">
-            </form>
-        </div>    
-        <div class="vote12">
-        <p>Candidate Name:<?php echo $candidate12?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit12" class="vote12 candidate12" value="vote">
-            </form>  
-        </div>
-        <div class="vote13">
-        <p>Candidate Name:<?php echo $candidate13?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit13" class="vote13 candidate13" value="vote">
-            </form>  
-        </div>
-        <div class="vote14">
-        <p>Candidate Name:<?php echo $candidate14?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit14" class="vote14 candidate14" value="vote">
-            </form>  
+        <div class="container">
+            <div class="vote candidate11">
+                <img src="../images/candidate1.png" alt="candidate11">
+                <h2><?php echo $candidate11 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit11" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate12">
+                <img src="../images/candidate1.png" alt="candidate12">
+                <h2><?php echo $candidate12 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit12" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate13">
+                <img src="../images/candidate1.png" alt="candidate13">
+                <h2><?php echo $candidate13 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit13" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate14">
+                <img src="../images/candidate1.png" alt="candidate14">
+                <h2><?php echo $candidate14 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit14" class="button" value="vote">
+                </form>
+            </div>
         </div>
     <?php
     }
@@ -213,30 +162,36 @@
             }
         }
         //echo $candidate21 . "<br>" . $candidate22 . "<br>" . $candidate23 . "<br>" . $candidate24;
-        ?>
-        <div class="vote11">
-            <p>Candidate Name:<?php echo $candidate21?></p>
-            <form action="indexpost.php" method="post">
-                <input type="submit" name="submit21" class="vote11 candidate11" value="vote">
-            </form>
-        </div>    
-        <div class="vote12">
-        <p>Candidate Name:<?php echo $candidate22?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit22" class="vote12 candidate12" value="vote">
-            </form>  
-        </div>
-        <div class="vote13">
-        <p>Candidate Name:<?php echo $candidate23?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit23" class="vote13 candidate13" value="vote">
-            </form>  
-        </div>
-        <div class="vote14">
-        <p>Candidate Name:<?php echo $candidate24?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit24" class="vote14 candidate14" value="vote">
-            </form>  
+    ?>
+         <div class="container">
+            <div class="vote candidate11">
+                <img src="../images/candidate1.png" alt="candidate11">
+                <h2><?php echo $candidate21 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit21" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate12">
+                <img src="../images/candidate1.png" alt="candidate12">
+                <h2><?php echo $candidate22 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit22" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate13">
+                <img src="../images/candidate1.png" alt="candidate13">
+                <h2><?php echo $candidate23 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit23" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate14">
+                <img src="../images/candidate1.png" alt="candidate14">
+                <h2><?php echo $candidate24 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit24" class="button" value="vote">
+                </form>
+            </div>
         </div>
     <?php
 
@@ -267,30 +222,36 @@
             }
         }
         // echo $candidate31 . "<br>" . $candidate32 . "<br>" . $candidate33 . "<br>" . $candidate34;
-        ?>
-        <div class="vote11">
-            <p>Candidate Name:<?php echo $candidate31?></p>
-            <form action="indexpost.php" method="post">
-                <input type="submit" name="submit31" class="vote11 candidate11" value="vote">
-            </form>
-        </div>    
-        <div class="vote12">
-        <p>Candidate Name:<?php echo $candidate32?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit32" class="vote12 candidate12" value="vote">
-            </form>  
-        </div>
-        <div class="vote13">
-        <p>Candidate Name:<?php echo $candidate33?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit33" class="vote13 candidate13" value="vote">
-            </form>  
-        </div>
-        <div class="vote14">
-        <p>Candidate Name:<?php echo $candidate34?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit34" class="vote14 candidate14" value="vote">
-            </form>  
+    ?>
+        <div class="container">
+            <div class="vote candidate11">
+                <img src="../images/candidate1.png" alt="candidate11">
+                <h2><?php echo $candidate31 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit31" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate12">
+                <img src="../images/candidate1.png" alt="candidate12">
+                <h2><?php echo $candidate32 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit32" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate13">
+                <img src="../images/candidate1.png" alt="candidate13">
+                <h2><?php echo $candidate33 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit33" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate14">
+                <img src="../images/candidate1.png" alt="candidate14">
+                <h2><?php echo $candidate34 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit34" class="button" value="vote">
+                </form>
+            </div>
         </div>
     <?php
 
@@ -322,30 +283,36 @@
             }
         }
         // echo $candidate41 . "<br>" . $candidate42 . "<br>" . $candidate43 . "<br>" . $candidate44;
-        ?>
-        <div class="vote11">
-            <p>Candidate Name:<?php echo $candidate41?></p>
-            <form action="indexpost.php" method="post">
-                <input type="submit" name="submit41" class="vote11 candidate11" value="vote">
-            </form>
-        </div>    
-        <div class="vote12">
-        <p>Candidate Name:<?php echo $candidate42?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit42" class="vote12 candidate12" value="vote">
-            </form>  
-        </div>
-        <div class="vote13">
-        <p>Candidate Name:<?php echo $candidate43?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit43" class="vote13 candidate13" value="vote">
-            </form>  
-        </div>
-        <div class="vote14">
-        <p>Candidate Name:<?php echo $candidate44?></p>
-        <form action="indexpost.php" method="post">
-                <input type="submit" name="submit44" class="vote14 candidate14" value="vote">
-            </form>  
+    ?>
+ <div class="container">
+            <div class="vote candidate11">
+                <img src="../images/candidate1.png" alt="candidate11">
+                <h2><?php echo $candidate41 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit41" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate12">
+                <img src="../images/candidate1.png" alt="candidate12">
+                <h2><?php echo $candidate42 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit42" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate13">
+                <img src="../images/candidate1.png" alt="candidate13">
+                <h2><?php echo $candidate43 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit43" class="button" value="vote">
+                </form>
+            </div>
+            <div class="vote candidate14">
+                <img src="../images/candidate1.png" alt="candidate14">
+                <h2><?php echo $candidate44 ?></h2>
+                <form action="indexpost.php" method="post">
+                    <input type="submit" name="submit44" class="button" value="vote">
+                </form>
+            </div>
         </div>
     <?php
     }

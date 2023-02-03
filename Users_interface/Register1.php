@@ -12,10 +12,12 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
         /* Reseting */
+
     </style>
 </head>
 
 <body>
+    <!-- <img src="../images/vote.jpg" alt="image1"> -->
     <div class="wrapper">
         <div class="logo">
             <img src="../images/council.jpeg" alt="">
